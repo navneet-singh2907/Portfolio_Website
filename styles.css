@@ -1,0 +1,302 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    background-image: linear-gradient(to right, rgb(180, 184, 180), rgb(64, 61, 107));
+    color: white;
+    font-family: 'poppins', sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+    /* background-color: rgb(22, 22, 149); */
+    background-image: linear-gradient(to right, rgb(9, 9, 71), rgb(45, 23, 23));
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0 23px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a:hover {
+    color: rgb(136, 136, 236);
+    font-size: 1.03rem;
+}
+
+.left {
+    font-size: 1.5em;
+    font-family: "Fjalla One", sans-serif;
+}
+
+.FirstSection {
+    display: flex;
+    justify-content: space-around;
+    margin: 110px 0;
+    align-items: center;
+}
+
+.FirstSection>div {
+    width: 30%;
+}
+
+.LeftSection {
+    font-size: 2.2rem;
+}
+
+.LeftSection .buttons {
+    padding: 23px 0;
+}
+
+.LeftSection .buttons .btn {
+    background: rgb(63, 63, 77);
+    color: white;
+    text-decoration: none;
+    /* border: 3px solid white; */
+    border-radius: 5px;
+    font-size: 17px;
+    cursor: pointer;
+}
+.github-btn {
+  background-image: linear-gradient(to right, white); /* GitHub black */
+  color: #ffffff;             /* white text */
+  padding: 5px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  text-decoration: none;      /* remove underline */
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.github-btn:hover {
+  background-color: #7e8a94;  /* slightly lighter on hover */
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.github-btn:active {
+  transform: translateY(0);
+}
+
+
+
+.RightSection {
+    width: 30px;
+}
+
+.RightSection img {
+    width: 80%;
+    margin: 30px;
+}
+
+.green {
+    color: rgb(32, 32, 33)
+}
+
+#element {
+    color: blueviolet;
+}
+
+main hr {
+    border: 0;
+    background-color: rgb(210, 171, 246);
+    height: 1.2px;
+    margin: 40px, 80px;
+}
+
+.SecondSection {
+    max-width: 80vw;
+    margin: auto;
+    height: 80vh;
+}
+
+.SecondSection h1 {
+    font-size: 1.8rem;
+    height: 10vh;
+}
+
+.text-gray {
+    color: rgb(29, 25, 25);
+}
+
+.SecondSection .box {
+    background: white;
+    width: 130vh;
+    height: 2px;
+    display: flex;
+    top: 44px;
+    position: relative;
+}
+
+.SecondSection .vertical {
+    width: 1px;
+    height: 50px;
+    background-color: white;
+    margin: 0 125px;
+}
+
+/* Let scaled items spill outside the line */
+.SecondSection .box {
+    overflow: visible;
+    /* add-only */
+}
+
+/* Smooth “magnifier” pop on hover */
+.SecondSection .vertical-title,
+.SecondSection .vertical-desc {
+    color: black;
+    transition: transform 180ms ease, filter 180ms ease;
+    transform-origin: left center;
+    /* scale from the left edge */
+    will-change: transform;
+    cursor: zoom-in;
+    z-index: 1;
+    /* ensure it can sit above neighbors */
+    position: relative;
+    /* already relative, this is safe */
+}
+
+.SecondSection .vertical-title:hover,
+.SecondSection .vertical-desc:hover {
+    transform: scale(1.25);
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.35));
+    z-index: 3;
+    /* bring to front when enlarged */
+}
+
+/* Avoid accidental zoom on touch devices */
+@media (hover: none) {
+
+    .SecondSection .vertical-title,
+    .SecondSection .vertical-desc {
+        cursor: default;
+    }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+
+    .SecondSection .vertical-title,
+    .SecondSection .vertical-desc {
+        transition: none;
+    }
+}
+
+.profile-pic {
+    width: 320px;
+    height: 380px;
+    border-radius: 40%;
+    object-fit: cover;
+    border: 3px solid var(--first-color);
+    box-shadow: 15px 14px 9px 16px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    display: block;
+    will-change: transform, opacity;
+    transform: translateZ(0);
+}
+
+
+
+
+.image-top {
+    width: 35px;
+    position: relative;
+    top: -35px;
+    left: -17px;
+}
+
+/* Enable zoom effect for the top icons too */
+.SecondSection .image-top {
+    transition: transform 180ms ease, filter 180ms ease;
+    transform-origin: center;
+    will-change: transform;
+    cursor: zoom-in;
+    z-index: 2;
+    /* sit above the line when zoomed */
+    position: relative;
+    /* safe with your current positioning */
+    display: block;
+    /* avoids odd inline gaps */
+}
+
+.SecondSection .image-top:hover {
+    transform: scale(1.25);
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.35));
+    z-index: 4;
+    /* above titles/desc while enlarged */
+}
+
+/* Optional: if the zoom gets clipped, keep this */
+.SecondSection .box {
+    overflow: visible;
+}
+
+/* No hover on touch devices */
+@media (hover: none) {
+    .SecondSection .image-top {
+        cursor: default;
+    }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .SecondSection .image-top {
+        transition: none;
+    }
+}
+
+
+.vertical-title {
+    position: relative;
+    top: 20px;
+    width: 132px;
+    left: -57px;
+}
+
+.vertical-desc {
+    position: relative;
+    top: 34px;
+    width: 150px;
+    left: -58px;
+    font-size: 12px;
+    color: green;
+}
+
+footer {
+    background-color: rgb(12 12 77);
+    height: 50px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer>div {
+    width: 200px;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer-rights {
+    text-align: center;
+    position: relative;
+    top: 10px;
+}
