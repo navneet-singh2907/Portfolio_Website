@@ -95,58 +95,38 @@ nav ul li a:hover {
 
 
 
+/* --- HERO LAYERING (unchanged class names) --- */
 .RightSection {
   position: relative;
+  isolation: isolate;     /* keeps z-index sane */
   width: 400px;
   height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: none;       /* remove any green panel behind */
+  overflow: visible;
 }
-
-/* blob sits behind but still visible through glow */
-.blob-container {
-  position: absolute;
-  inset: 0;
-  z-index: 1;                 /* <- bring it above background but under photo content */
-  filter: blur(25px) brightness(110%) saturate(120%);
-  opacity: 0.9;
-}
-
-/* image should blend with blob instead of floating over it */
+ 
 .profile-pic {
-  position: relative;
-  z-index: 2;                 /* slightly higher than blob */
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  object-fit: cover;
-  mix-blend-mode: normal;    /* <- this blends image with blob */
-  background: transparent !important;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    width: 300px;
+    height: 350px;
+    border-radius: 40%;
+    object-fit: cover;
+    border: 3px solid var(--first-color);
+    box-shadow: 15px 14px 9px 16px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    display: block;
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    transition: transform 0.3s ease;
 }
-
-.blob-container { filter: drop-shadow(0 16px 40px rgba(76,175,80,.35)); }
-
-/* Keyframes for morphing */
-@keyframes blobMorph {
-  0% {
-    d: path("M 9.19024 145.964 C 34.0253 76.5814 114.865 54.7299 184.111 29.4823 C 245.804 6.98884 311.86 -14.9503 370.735 14.143 C 431.207 44.026 467.948 107.508 477.191 174.311 C 485.897 237.229 454.931 294.377 416.506 344.954 C 373.74 401.245 326.068 462.801 255.442 466.189 C 179.416 469.835 111.552 422.137 65.1576 361.805 C 17.4835 299.81 -17.1617 219.583 9.19024 145.964 Z");
-  }
-  50% {
-    d: path("M 32.9 123.5 C 52.4 69.2 117.4 42.1 185.2 21.6 C 246.3 3.2 319.6 -8.9 372.9 21.3 C 423.7 50.1 446.6 112.3 465.2 175.9 C 483.8 239.5 490.4 300.5 452.6 353.4 C 407.9 414.1 335.8 464.9 255.4 468.1 C 181.8 471 103.7 423.1 59.3 362.4 C 15.7 303.8 9.3 236.2 32.9 123.5 Z");
-  }
-  100% {
-    d: path("M 9.19024 145.964 C 34.0253 76.5814 114.865 54.7299 184.111 29.4823 C 245.804 6.98884 311.86 -14.9503 370.735 14.143 C 431.207 44.026 467.948 107.508 477.191 174.311 C 485.897 237.229 454.931 294.377 416.506 344.954 C 373.74 401.245 326.068 462.801 255.442 466.189 C 179.416 469.835 111.552 422.137 65.1576 361.805 C 17.4835 299.81 -17.1617 219.583 9.19024 145.964 Z");
-  }
+.profile-pic:hover{
+  transform: scale(1.05);
 }
 
 
 
-.RightSection img {
-    width: 80%;
-    margin: 30px;
-}
 
 .green {
     color: rgb(32, 32, 33)
@@ -241,18 +221,6 @@ main hr {
     }
 }
 
-.profile-pic {
-    width: 320px;
-    height: 380px;
-    border-radius: 40%;
-    object-fit: cover;
-    border: 3px solid var(--first-color);
-    box-shadow: 15px 14px 9px 16px rgba(0, 0, 0, 0.2);
-    margin: 0 auto;
-    display: block;
-    will-change: transform, opacity;
-    transform: translateZ(0);
-}
 
 
 
