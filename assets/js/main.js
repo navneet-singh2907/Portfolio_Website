@@ -25,12 +25,21 @@ document.addEventListener('DOMContentLoaded', () => {
   sr.reveal('.SecondSection .box', { delay: 120 });
   sr.reveal('.SecondSection .vertical', { interval: 110 });
   sr.reveal('.SecondSection .image-top, .SecondSection .vertical-title, .SecondSection .vertical-desc', { interval: 90 });
-
-  // PROJECTS (projects section)
-  sr.reveal('.projects .project', { interval: 150 });
-  sr.reveal('.projects .project-image', { delay: 120 });
-  sr.reveal('.projects .project-info, .projects .text, .projects .lm-btn', { interval: 100 });
-
+  // Projects (ProjectsSection)
+  sr.reveal('.ProjectsSection .project', { interval: 150 });
+  sr.reveal('.projects .project-image', { delay: 160 });
+  sr.reveal('.projects .project-info, .projects .text, .projects .lm-btn', { delay: 150 });
   // Footer
   sr.reveal('footer, .footer-rights', { distance: '20px', delay: 120 });
 });
+
+// Certifications reveal
+if (window.ScrollReveal) {
+  ScrollReveal().reveal('.cert-card', {
+    distance: '40px',
+    origin: 'bottom',
+    interval: 320,
+    duration: 1200,
+    easing: 'cubic-bezier(.2,.7,.2,1)'
+  });
+}
