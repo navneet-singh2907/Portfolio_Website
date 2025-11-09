@@ -386,3 +386,225 @@ footer {
     justify-content: center;
 }
 }
+
+
+/**************
+  BREAKPOINTS
+  - Desktop (>= 1025px): your current layout stays
+  - Tablet (600px – 1024px): horizontal timeline with swipe
+  - Mobile (<= 599px): vertical timeline
+ **************/
+
+/* ============ TABLET: keep timeline horizontal but make it swipeable and tighter ============ */
+/* ================= TABLET FIX (600px–1024px) ================= */
+/* =============== TABLET-ONLY LAYOUT (600–1024px) =============== */
+@media (min-width:600px) and (max-width:1024px){
+
+  .SecondSection{
+    max-width:95vw;
+    margin:auto;
+    padding:32px 8px;
+    height:auto;
+  }
+
+  /* Turn the timeline into a 2-column card grid on tablet */
+  .SecondSection .box{
+    display:grid;
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    gap: 28px 28px;
+
+    width:100% !important;     /* override old 130vh */
+    height:auto;
+    background:transparent !important;
+    overflow:visible;
+    padding: 8px 4px;
+    position:relative;
+  }
+
+  /* remove the desktop horizontal rail for tablet */
+  .SecondSection .box::before{ display:none; }
+
+  /* Each item becomes a card with a small timeline accent on the left */
+  .SecondSection .vertical{
+    position:relative !important;
+    width:auto !important;
+    height:auto !important;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius:16px;
+    padding:20px 16px 16px 56px;     /* space for icon/rail on left */
+    box-shadow: 0 6px 22px rgba(0,0,0,.18);
+    backdrop-filter: blur(2px);
+  }
+
+  /* round “node” and thin rail inside each card */
+  .SecondSection .vertical::before{
+    content:"";
+    position:absolute;
+    left:22px; top:22px;
+    width:10px; height:10px;
+    background:#fff; border-radius:50%;
+    box-shadow: 0 0 0 6px rgba(255,255,255,.18);
+  }
+  .SecondSection .vertical::after{
+    content:"";
+    position:absolute;
+    left:27px; top:40px; bottom:16px;
+    width:2px; background: rgba(255,255,255,.55);
+  }
+
+  /* Stop desktop absolute positioning on tablet */
+  .SecondSection .image-top{
+    position:absolute; top:16px; left:16px;
+    width:28px; height:28px; object-fit:contain;
+    transform:none !important; z-index:1;
+  }
+  .SecondSection .vertical-title,
+  .SecondSection .vertical-desc{
+    position:static !important;
+    top:auto; left:auto; transform:none !important;
+    width:100% !important; text-align:left;
+  }
+
+  .SecondSection .vertical-title{
+    margin:2px 0 6px;
+    font-size:clamp(1rem, .95rem + .2vw, 1.1rem);
+    color:#ffffff;
+  }
+  .SecondSection .vertical-desc{
+    font-size:clamp(.9rem, .85rem + .2vw, 1rem);
+    color:#e3f6e3;
+  }
+
+  /* Disable big zooms that caused collisions */
+  .SecondSection .vertical-title:hover,
+  .SecondSection .vertical-desc:hover,
+  .SecondSection .image-top:hover{
+    transform:none !important;
+    filter:none !important;
+    cursor:default;
+  }
+
+  /* Projects: tidy two-column wrap on tablet */
+  .project{
+    flex-wrap:wrap;
+    gap:16px;
+    padding:16px;
+  }
+  .project-image img{
+    width:100%;
+    max-width:520px;
+    height:auto;
+    border-radius:16px;
+  }
+  .project-info{
+    flex:1 1 320px; min-width:280px;
+  }
+}
+
+/* ============ MOBILE: switch timeline to a clean VERTICAL design ============ */
+@media (max-width: 599px) {
+  /* Section shell */
+  .SecondSection{
+    max-width: 100%;
+    padding: 1.75rem 1rem;
+    height: auto;
+  }
+
+  /* Turn the horizontal line into a vertical timeline at the left */
+  .SecondSection .box{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    background: transparent;
+    overflow: visible;
+    padding-left: 34px;  /* room for the vertical line */
+
+    /* draw the vertical line */
+  }
+  .SecondSection .box::before{
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0; left: 16px;
+    width: 2px; background: #fff;
+  }
+
+  /* Each item becomes a block on the vertical line */
+  .SecondSection .vertical{
+    position: relative;
+    width: auto; height: auto;
+    background: none;
+    padding: 14px 0 26px;  /* vertical spacing between items */
+    margin: 0;
+  }
+
+  /* Dot on the line */
+  .SecondSection .vertical::before{
+    content: "";
+    position: absolute;
+    left: 12px; top: 18px;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: #fff;
+  }
+
+  /* Put the icon inline with the text (optional), or keep above title */
+  .image-top{
+    position: relative;
+    top: 0; left: 0; transform: none;
+    width: 34px; height: 34px; object-fit: contain;
+    margin-left: 10px; /* nudged right of the line */
+    margin-bottom: 6px;
+  }
+
+  /* Title/desc stacked, left-aligned */
+  .vertical-title{
+    position: relative;
+    top: 0; left: 0; transform: none;
+    width: auto;
+    margin-left: 10px;   /* aligns with the icon */
+    text-align: left;
+    font-weight: 600;
+    font-size: clamp(1rem, .95rem + .8vw, 1.15rem);
+    color: #fff;
+  }
+  .vertical-desc{
+    position: relative;
+    top: 0; left: 0; transform: none;
+    width: auto;
+    margin-left: 10px;
+    text-align: left;
+    font-size: clamp(.9rem, .85rem + .6vw, 1rem);
+    color: #e9f1ee;
+  }
+
+  /* Keep your hover polish without shifting layout */
+  .SecondSection .vertical:hover .vertical-title,
+  .SecondSection .vertical:hover .vertical-desc,
+  .SecondSection .vertical:hover .image-top{
+    transform: translateY(-2px);
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,.35));
+  }
+
+  /* Projects: stack image then text */
+  .project{
+    flex-direction: column;
+    gap: .75rem;
+    padding: 1rem;
+  }
+  .row-reverse{ flex-direction: column; } /* keep order sensible */
+
+  .project-image img{
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+  }
+  .project-info{
+    width: 100%;
+    min-width: 0;
+  }
+  .project-info .text{
+    font-size: clamp(1.05rem, 1rem + 2vw, 1.35rem);
+  }
+}
+
