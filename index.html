@@ -17,9 +17,7 @@
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
 
-  <!-- ScrollReveal -->
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="assets/js/main.js"></script>
+
 </head>
 
 <body>
@@ -28,12 +26,12 @@
       <div class="left">Navneet's Portfolio</div>
       <div class="right">
         <ul>
-          <li><a href="/">Home</a></li>
+          <li><a href="#home">Home</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#certifications">Certifications</a></li>
 
 
-          <li><a href="/blogs.html">Blogs</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
           <li><a href="#contact">Contact Me</a></li>
         </ul>
       </div>
@@ -41,7 +39,7 @@
   </header>
 
   <main>
-    <section class="FirstSection">
+    <section class="FirstSection" id="home">
       <div class="LeftSection">
         Hi, My name is <span class="green"> Navneet </span>
         <div>and I am a passionate </div>
@@ -78,36 +76,35 @@
           <img class="image-top" src="study.png" alt="">
           <div class="vertical-title">Computer Science Engineering (2014 - 2018)</div>
           <div class="vertical-desc">
-            A random paragraph can also be an excellent way for a writer to tackle writers'
-            block. Writing block can often happen due to being stuck with a current
-            project that the writer is trying to complete.
+            Studied core computer science subjects including data structures, algorithms,
+            operating systems, databases, and software engineering, with practical exposure
+            through academic and team-based projects.
           </div>
         </div>
         <div class="vertical">
           <img class="image-top" src="developer.png" alt="">
           <div class="vertical-title">Software developer (2019 - 2020)</div>
           <div class="vertical-desc">
-            A random paragraph can also be an excellent way for a writer to tackle writers'
-            block. Writing block can often happen due to being stuck with a current
-            project that the writer is trying to complete.
+            Developed and maintained web applications using modern programming languages and
+            frameworks. Gained hands-on experience in debugging, feature implementation,
+            and optimizing code for performance and reliability.
           </div>
         </div>
         <div class="vertical">
           <img class="image-top" src="study.png" alt="">
           <div class="vertical-title">Masters of Computer Science Engineering (2022 - 2023)</div>
           <div class="vertical-desc">
-            A random paragraph can also be an excellent way for a writer to tackle writers'
-            block. Writing block can often happen due to being stuck with a current
-            project that the writer is trying to complete.
+            Focused on advanced topics including machine learning, data analytics, distributed
+            systems, and software architecture, with hands-on experience through academic projects
+            and case studies.
           </div>
         </div>
         <div class="vertical">
           <img class="image-top" src="study.png" alt="">
           <div class="vertical-title">Masters of Computer Information Systems (2024 - Present)</div>
           <div class="vertical-desc">
-            A random paragraph can also be an excellent way for a writer to tackle writers'
-            block. Writing block can often happen due to being stuck with a current
-            project that the writer is trying to complete.
+            Advancing expertise in information systems, data analysis, and modern enterprise
+            technologies while working on applied academic and industry-focused projects.
           </div>
         </div>
       </div>
@@ -118,7 +115,7 @@
 
       <div class="project">
         <div class="project-image">
-          <img src="img/project1.jpg" alt="Credit Card Fraud Detection Dashboard" loading="lazy" decoding="async">
+          <img src="project1.png" alt="Credit Card Fraud Detection Dashboard" loading="lazy" decoding="async">
         </div>
         <div class="project-info">
           <div class="text">Credit Card Fraud Detection</div>
@@ -129,13 +126,19 @@
           <div class="project-tags">
             <span>Python</span><span>Flask</span><span>Machine Learning</span><span>Render</span>
           </div>
-          <a class="lm-btn" href="https://fraud-capstone-web.onrender.com" target="_blank" rel="noopener">View Live</a>
+          <div class="project-links">
+            <a class="lm-btn" href="https://fraud-capstone-web.onrender.com" target="_blank" rel="noopener">Live
+              Demo</a>
+            <a class="lm-btn" href="https://github.com/navneet-singh2907/Fraud_Capstone" target="_blank"
+              rel="noopener">GitHub</a>
+          </div>
+
         </div>
       </div>
 
       <div class="project row-reverse">
         <div class="project-image">
-          <img src="img/project2.jpg" alt="Portfolio Website Screenshot" loading="lazy" decoding="async">
+          <img src="Project2.png" alt="Portfolio Website Screenshot" loading="lazy" decoding="async">
         </div>
         <div class="project-info">
           <div class="text">Portfolio Website</div>
@@ -146,10 +149,32 @@
           <div class="project-tags">
             <span>HTML</span><span>CSS</span><span>JavaScript</span>
           </div>
-          <a class="lm-btn" href="https://yourusername.github.io/portfolio/" target="_blank" rel="noopener">View
+          <a class="lm-btn" href="https://github.com/navneet-singh2907/Portfolio_Website" target="_blank"
+            rel="noopener">View
             Project</a>
         </div>
       </div>
+      <div class="project">
+        <div class="project-image">
+          <img src="Project3.png" alt="Power BI Dashboard Project" loading="lazy" decoding="async">
+        </div>
+
+        <div class="project-info">
+          <div class="text">Power BI Sales Dashboard</div>
+          <p>
+            Interactive Power BI dashboard analyzing sales performance with KPIs, trend insights,
+            and region/product breakdowns. Built with data cleaning in Power Query and DAX measures.
+          </p>
+
+          <div class="project-tags">
+            <span>Power BI</span><span>DAX</span><span>Power Query</span><span>Data Visualization</span>
+          </div>
+
+          <a class="lm-btn" href="https://github.com/navneet-singh2907/Pizza-Sales-dashboard-PowerBI" target="_blank"
+            rel="noopener">View Dashboard</a>
+        </div>
+      </div>
+
     </section>
 
     <section class="certs" id="certifications">
@@ -238,7 +263,7 @@
       <div class="third"></div>
     </div>
     <div class="footer-rights">
-      Copyright &#169; navneetdataX.com | All Rights Reserved
+      Copyright &#169;2025 navneetdataX.com | All Rights Reserved
     </div>
   </footer>
 
@@ -256,7 +281,7 @@
   <script src="assets/js/main.js"></script>
 
 
-  </script>
+
 
 
 </body>

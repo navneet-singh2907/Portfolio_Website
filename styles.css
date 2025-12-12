@@ -5,7 +5,7 @@
 
 
 html {
-    scroll-behavior: auto !important;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -46,6 +46,19 @@ nav ul li a:hover {
     transform: translateY(-1px);
     transition: transform .15s;
 }
+
+#home 
+{ 
+  scroll-margin-top: 50px; 
+}
+
+header { /* or your nav selector */
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #fff; /* or your background */
+}
+
 
 .left {
     font-size: 1.5em;
@@ -896,10 +909,16 @@ footer {
     gap: .75rem;
     padding: 1rem;
   }
+  .project-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
   .row-reverse{ flex-direction: column; } /* keep order sensible */
 
   .project-image img{
-    width: 100%;
+    width: 10%;
     height: auto;
     border-radius: 14px;
   }
@@ -924,4 +943,56 @@ footer {
 
 .BlogSection h1{ font-size: 2.5rem; }
 .BlogSection p{ font-size: 1.2rem; opacity: .9; }
+
+
+/* ===== FIX PROJECT IMAGE SIZE & RATIO ===== */
+.project-image {
+  width: 100%;
+  height: 220px;          /* adjust height if needed */
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.project-image img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;      /* keeps image ratio */
+  object-position: center;
+  display: block;
+}
+
+
+.project {
+  display: flex;
+  flex-direction: column !important;
+  gap: 0 !important;
+}
+
+.project-image {
+  width: 100% !important;
+  height: 220px;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+
+.project-info {
+  width: 100% !important;
+  flex: none !important;
+  margin: 0 !important;
+  padding: 20px;
+}
+
+/* ===== MOBILE ADJUSTMENT ===== */
+@media (max-width: 768px) {
+  .project-image {
+    height: 180px;
+  }
+
+  .profile-pic {
+    width: 200px;
+    height: 200px;
+  }
+}
 

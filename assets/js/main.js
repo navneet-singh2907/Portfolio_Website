@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
   sr.reveal('.contact-form input', { interval: 300, delay: 350 });
   sr.reveal('.contact-form textarea', { delay: 350 });
   sr.reveal('.contact-form button', { delay: 450 });
+  
 
   /* ===================== FOOTER ===================== */
   sr.reveal('footer, .footer-rights', { distance: '20px', delay: 120 });
