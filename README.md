@@ -28,7 +28,7 @@ Deployed using **Render**.
 
 ## 📄 Resume
 You can download my resume directly from the website or here:  
-➡️ `Navneet_Resume.pdf`
+➡️ `Navneet_Singh_Resume.pdf`
 
 ## 📬 Contact
 Feel free to reach out using the contact form on the website or connect with me:
