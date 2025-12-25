@@ -996,3 +996,242 @@ footer {
   }
 }
 
+/* ========== BLOG PAGE ========== */
+
+.BlogSection {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 24px 60px;
+}
+
+.blog-heading {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 4px;
+}
+
+.blog-subtitle {
+  text-align: center;
+  color: #c0c3d6;
+  margin-bottom: 40px;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+.blog-card {
+  background: #15161c;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+              border-color 0.18s ease, background 0.18s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 34px 80px rgba(0, 0, 0, 0.7);
+  border-color: rgba(111, 140, 255, 0.7);
+  background: radial-gradient(circle at top left, #22243a, #111218);
+}
+
+.blog-thumb img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.blog-content {
+  padding: 18px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.blog-title {
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+.blog-excerpt {
+  color: #d0d2e5;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.blog-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: #f7f7f8;
+  color: #11121a;
+  font-weight: 600;
+  font-size: 0.98rem;
+  text-decoration: none;
+  border: none;
+  transition: background 0.16s ease, transform 0.16s ease;
+}
+
+.blog-btn:hover {
+  background: #dde1ff;
+  transform: translateY(-1px);
+}
+
+/* Mobile spacing */
+@media (max-width: 600px) {
+  .BlogSection {
+    margin-top: 60px;
+    padding-inline: 16px;
+  }
+
+  .blog-thumb img {
+    height: 190px;
+  }
+}
+
+/* ===== SINGLE BLOG PAGE – FINAL FIX ===== */
+
+.blog-page {
+  max-width: 900px;
+  margin: 120px auto 80px;      /* below navbar + centered */
+  padding: 0 20px;
+}
+
+.blog-article {
+  background: rgba(5, 5, 12, 0.96);
+  border-radius: 24px;
+  padding: 24px 24px 32px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.65);
+}
+
+/* Header area – remove weird top gap */
+.blog-header {
+  margin: 0;
+  padding: 0 0 12px;
+}
+
+.blog-header > * {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.blog-tag {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #9aa0d0;
+}
+
+.blog-meta {
+  color: #9fa3c4;
+  font-size: 0.85rem;
+}
+
+/* HERO IMAGE – stop sticking + cap height */
+.blog-hero {
+  margin: 16px 0 0;
+  padding: 0;
+  overflow: hidden;
+  position: static !important;
+}
+
+.blog-hero img {
+  width: 100%;
+  max-height: 360px;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
+  position: static !important;
+  top: auto !important;
+}
+
+/* INLINE IMAGES – smaller + aligned */
+.blog-inline-image {
+  margin: 16px 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.blog-inline-image img {
+  width: 100%;
+  max-height: 260px;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Body text */
+.blog-body {
+  margin-top: 26px;
+}
+
+.blog-body p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  color: #e3e4f0;
+  font-size: 1rem;
+}
+
+.blog-body ul {
+  margin: 0 0 1rem 1.2rem;
+  padding-left: 0.8rem;
+  color: #e3e4f0;
+  line-height: 1.6;
+}
+
+.blog-body h2 {
+  font-size: 1.35rem;
+  margin: 1.8rem 0 0.7rem;
+}
+
+.blog-note {
+  border-left: 3px solid #6f8cff;
+  padding-left: 10px;
+}
+
+.blog-back-link {
+  display: inline-block;
+  margin-top: 18px;
+  color: #6f8cff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.blog-back-link:hover {
+  text-decoration: underline;
+}
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  .blog-page {
+    margin: 100px auto 60px;
+    padding: 0 14px;
+  }
+
+  .blog-article {
+    padding: 20px 16px 24px;
+  }
+
+  .blog-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .blog-hero img {
+    max-height: 260px;
+  }
+}

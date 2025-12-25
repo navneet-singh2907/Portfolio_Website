@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,11 +10,14 @@
   <!-- Fonts (same as home) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 
   <!-- Shared styles -->
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <!-- Same navbar -->
   <header>
@@ -34,8 +38,28 @@
   <main>
     <!-- Minimal blog placeholder -->
     <section class="BlogSection">
-      <h1>Blog</h1>
-      <p>New posts will be updated soon. Stay tuned!</p>
+      <h1 class="blog-heading">Blogs</h1>
+      <p class="blog-subtitle">Articles from my learning and projects.</p>
+
+      <div class="blog-grid">
+
+        <!-- CARD 1 -->
+        <article class="blog-card">
+          <div class="blog-thumb">
+            <img src="https://bernardmarr.com/img/5%20Reasons%20Why%20Artificial%20Intelligence%20Really%20Is%20Going%20To%20Change%20Our%20World.png" alt="AI changing the world">
+          </div>
+          <div class="blog-content">
+            <h2 class="blog-title">AI Is Changing IT — Not Killing It</h2>
+            <p class="blog-excerpt">
+              Worried AI will replace you? It won’t—unless you stop evolving.
+              Automation is removing repetitive work, not real human intelligence.
+              The IT future belongs to those who understand systems, think critically, and use AI as a tool.
+            </p>
+            <a href="blog1.html" class="blog-btn">Read More</a>
+          </div>
+        </article>
+
+      </div>
     </section>
   </main>
 
@@ -49,4 +73,5 @@
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>
