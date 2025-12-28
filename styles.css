@@ -1363,3 +1363,24 @@ footer {
     height: 190px;
   }
 }
+
+/* ===================== modifying the certification section ===================== */ 
+.certs-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+  .certs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .certs-grid {
+    grid-template-columns: 1fr;
+  }
+}
