@@ -1436,3 +1436,30 @@ footer {
         box-shadow: 0 0 0 0 rgba(255, 75, 43, 0);
     }
 }
+
+/* ===================== QR TOOL CENTER FIX ===================== */
+.qr-tool{
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 16px;
+  text-align: center;
+  color: #fff;
+}
+
+.qr-tool .contact-form{
+  align-items: center;
+}
+
+.qr-tool .contact-form input{
+  width: 100%;
+  max-width: 750px;
+}
+
+.qr-tool .contact-form button{
+  align-self: center;
+}
+
+#qr-result-container{
+  width: 100%;
+  max-width: 750px;
+}
