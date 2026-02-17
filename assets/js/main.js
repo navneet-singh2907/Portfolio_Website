@@ -57,3 +57,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+function generateQR() {
+    const url = document.getElementById('qr-input').value.trim();
+    const qrImage = document.getElementById('qr-image');
+    const placeholder = document.getElementById('qr-placeholder');
+    const downloadLink = document.getElementById('download-link');
+
+    if (!url) {
+        alert("Please enter a URL first!");
+        return;
+    }
+
+    // Using a public API for now (Step 3 of the roadmap: Integration)
+    const qrSource = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(url)}`;
+
+    placeholder.innerText = "Generating...";
+    qrImage.style.display = 'none';
+
+    qrImage.onload = () => {
+        placeholder.style.display = 'none';
+        qrImage.style.display = 'block';
+        downloadLink.style.display = 'inline-block';
+        downloadLink.href = qrSource;
+    };
+    qrImage.src = qrSource;
+}
