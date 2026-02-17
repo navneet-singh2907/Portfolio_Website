@@ -1384,3 +1384,55 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ===================== QR code generator ===================== */ 
+
+#qr-result-container {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+}
+
+#qr-image {
+    display: none; /* Hidden until URL is provided */
+    max-width: 200px;
+    margin: 10px auto;
+    border-radius: 8px;
+}
+
+.download-link {
+    display: none;
+    color: #7aa2ff;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* ===================== New Gif ===================== */ 
+
+.new-badge {
+    background-color: #ff4b2b; /* A bright "action" color */
+    color: white;
+    font-size: 0.6rem;
+    padding: 2px 6px;
+    border-radius: 10px;
+    margin-left: 5px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-weight: bold;
+    animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 75, 43, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 75, 43, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 75, 43, 0);
+    }
+}
